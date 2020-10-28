@@ -27,7 +27,7 @@ app.get("/graph", function (req, res) {
   const pageOne = graph.addPage({ id: "page-1", title: "Page 1" });
   const pageTwo = graph.addPage({ id: "page-2", title: "Page 2" })
   graph.addRule("rule-1", pageOne, pageTwo)
-  console.log(graph.getRules());
+  console.log(pageOne.getReachablePages());
 });
 
 app.listen(PORT, () =>

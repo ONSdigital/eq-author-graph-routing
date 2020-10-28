@@ -3,6 +3,8 @@ module.exports = class Rule {
     this.id = id;
     this.from = from;
     this.to = to;
+
+    from.addReachablePage(to);
   }
 
   getId() {

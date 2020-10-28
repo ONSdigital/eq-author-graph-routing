@@ -2,6 +2,7 @@ module.exports = class Page {
   constructor(id, title) {
     this.id = id;
     this.title = title;
+    this.reachablePages = [];
   }
 
   getId() {
@@ -10,5 +11,13 @@ module.exports = class Page {
 
   getTitle() {
     return this.title;
+  }
+
+  getReachablePages() {
+    return this.reachablePages;
+  }
+
+  addReachablePage(page) {
+    this.reachablePages.push(page);
   }
 };
