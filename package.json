@@ -1,0 +1,22 @@
+{
+  "name": "eq-author-graph-routing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ONSdigital/eq-author-graph-routing.git",
+  "author": "Matthew Elcock <mattiose@outlook.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "NODE_ENV='development' nodemon node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-pino-logger": "^5.0.0",
+    "pino": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "pino-pretty": "^4.3.0"
+  }
+}
