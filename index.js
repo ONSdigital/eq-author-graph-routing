@@ -1,4 +1,5 @@
 const app = require("express")();
+const { Graph } = require("./src/middleware");
 
 const PORT = 3000;
 const developmentMode = process.env.NODE_ENV === "development";
@@ -21,4 +22,13 @@ app.get("/status", function (req, res) {
   });
 });
 
-app.listen(PORT, () => pino.info(`🚢 Server ready at http://localhost:${PORT}`));
+app.get("/graph", function (req, res) {
+  const graph = new Graph("My graph");
+  const newPage = graph.addPage({ id: "hello", title: "Page 1" });
+  console.log(graph.getTitle());
+  console.log(graph.getPages());
+});
+
+app.listen(PORT, () =>
+  pino.info(`🚢 Server ready at http://localhost:${PORT}`)
+);
